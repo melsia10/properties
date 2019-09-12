@@ -1,25 +1,34 @@
+import be.technifutur.MVC.ApplicationMVC;
 import be.technifutur.MVC.Controleur;
 import be.technifutur.MVC.MVCFactory;
 import be.technifutur.MVC.Vue;
 
-public class MVC implements MVCFactory<Model> {
-    private Model model;
+public class MVC implements MVCFactory<Conteneur> {
+    private Conteneur model = new Conteneur();
+    private Controller controller = new Controller();
+    private View view = new View();
 
     @Override
-    public Model getModel() {
+    public Conteneur getModel() {
         if (model == null) {
-            model = new Model();
+            model = new Conteneur();
         }
         return model;
     }
 
     @Override
-    public Controleur<Model> getControleur() {
-        return null;
+    public Controleur<Conteneur> getControleur() {
+        if (controller == null) {
+            controller = new Controller();
+        }
+        return controller;
     }
 
     @Override
-    public Vue<Model> getVue() {
-        return null;
+    public Vue<Conteneur> getVue() {
+        if (view == null) {
+            view = new View();
+        }
+        return view;
     }
 }

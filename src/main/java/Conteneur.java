@@ -2,9 +2,17 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Model {
+public class Conteneur {
 
-    private Map<String, String> map = new HashMap<>();
+    private Map<String, String> map;
+
+
+
+    private boolean isFinish;
+
+    public Conteneur(){
+        map = new HashMap<>();
+    }
 
     public Map<String, String> getMapUnmodifiable() {
         return Collections.unmodifiableMap(map);
@@ -33,5 +41,12 @@ public class Model {
 
     public int getSize() {
         return map.size();
+    }
+    public boolean isFinish() {
+        return isFinish;
+    }
+
+    public void setFinish(boolean finish) {
+        isFinish = finish;
     }
 }
