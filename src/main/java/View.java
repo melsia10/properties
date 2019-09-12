@@ -10,7 +10,7 @@ public class View implements be.technifutur.MVC.Vue<Conteneur> {
         if(conteneur.getSize()==0){
             return new StringBuilder("Pour ajouter une entrée, +clef;valeur , pour en supprimer une, -clef;valeur");
         } else {
-            return new StringBuilder(conteneur.getEntryByKey("test"));
+            return new StringBuilder("la taille est "+conteneur.getSize());
         }
     }
 
